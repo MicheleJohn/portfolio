@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public -o .next/storybook-static"
   },
   "dependencies": {
     "flowbite": "^1.5.1",
