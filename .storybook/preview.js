@@ -1,16 +1,5 @@
 import "../styles/globals.css";
 import * as NextImage from "next/image";
-import { MemoryRouter } from "react-router-dom";
-import Style from "./style";
-
-export const decorators = [
-  (Story) => (
-    <MemoryRouter initialEntries={["/"]}>
-      <Style />
-      <Story />
-    </MemoryRouter>
-  ),
-];
 
 const OriginalNextImage = NextImage.default;
 

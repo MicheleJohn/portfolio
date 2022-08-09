@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s public -o .next/storybook-static"
+    "build-storybook": "build-storybook -o ./public/storybook-static"
   },
   "dependencies": {
     "flowbite": "^1.5.1",
