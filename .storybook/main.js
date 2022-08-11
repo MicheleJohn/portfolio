@@ -1,6 +1,7 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
+  staticDirs: ["../public/locales"],
   stories: [
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
@@ -11,6 +12,8 @@ module.exports = {
     "@storybook/addon-interactions",
     "storybook-dark-mode",
     "@storybook/addon-a11y",
+    "storybook-react-i18next",
+    "storybook-tailwind-dark-mode",
     {
       name: "@storybook/addon-postcss",
       options: {
@@ -37,6 +40,7 @@ module.exports = {
      */
     config.resolve.alias = {
       ...config.resolve?.alias,
+      "next-i18next": "react-i18next",
       "@": [path.resolve(__dirname, "../src/"), path.resolve(__dirname, "../")],
     };
 
