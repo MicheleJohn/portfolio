@@ -1,0 +1,32 @@
+{
+   "cards": {
+      "project-sb": {
+         "title": "Esplora lo Storybook del progetto",
+         "text": "Dai un'occhiata ai componenti presenti nel sito, isolandoli dalla loro logica applicativa.",
+         "buttons": {
+            "project-sb": {
+               "text": "Vai su",
+               "brand-text": "Storybook (del progetto)"
+            },
+            "sb": {
+               "text": "Vai su",
+               "brand-text": "Storybook (sito)"
+            }
+         }
+      },
+      "flowbite-sb": {
+         "title": "Esplora lo Storybook del System Designer",
+         "text": "In questo sito troverai componenti react/tailwind documentati da 'Flowbite'.",
+         "buttons": {
+            "flowbite-sb": {
+               "text": "Vai su",
+               "brand-text": "Storybook (Flowbite)"
+            },
+            "flowbite": {
+               "text": "Vai su",
+               "brand-text": "Flowbite"
+            }
+         }
+      }
+   }
+}

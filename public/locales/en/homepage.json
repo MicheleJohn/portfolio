@@ -1,0 +1,32 @@
+{
+   "cards": {
+      "project-sb": {
+         "title": "DIiscover the project Storybook",
+         "text": "Take a look at the site's components, isolating them from the application logic.",
+         "buttons": {
+            "project-sb": {
+               "text": "Go to",
+               "brand-text": "Storybook (project)"
+            },
+            "sb": {
+               "text": "Go to",
+               "brand-text": "Storybook (website)"
+            }
+         }
+      },
+      "flowbite-sb": {
+         "title": "Discover the System Designer Storybook",
+         "text": "On this website you will find some react/tailwind components documented by 'Flowbite'.",
+         "buttons": {
+            "flowbite-sb": {
+               "text": "Go to",
+               "brand-text": "Storybook (Flowbite)"
+            },
+            "flowbite": {
+               "text": "Go to",
+               "brand-text": "Flowbite"
+            }
+         }
+      }
+   }
+}

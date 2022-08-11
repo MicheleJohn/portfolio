@@ -1,62 +1,76 @@
-import { Alert, Button, Card, DarkThemeToggle } from "flowbite-react";
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import { useMemo } from "react";
+import CardCta, { CardCtaProps } from "../components/cards/card-cta";
+import _useTranslation from "../hooks/_useTranslation";
+import { SiStorybook, SiReact } from "react-icons/si";
 
 const Home: NextPage = () => {
+  const { t } = _useTranslation("homepage");
+
+  const cards = useMemo(
+    (): CardCtaProps[] => [
+      {
+        title: t("cards.project-sb.title"),
+        text: t("cards.project-sb.text"),
+        buttons: [
+          {
+            icon: <SiStorybook />,
+            text: t("cards.project-sb.buttons.project-sb.text"),
+            brandText: t("cards.project-sb.buttons.project-sb.brand-text"),
+            link: {
+              next: { href: "/storybook-static/index.html", locale: false },
+            },
+          },
+          {
+            icon: <SiStorybook />,
+            text: t("cards.project-sb.buttons.sb.text"),
+            brandText: t("cards.project-sb.buttons.sb.brand-text"),
+            link: {
+              next: { href: "https://storybook.js.org/" },
+              anchor: { target: "_blank", rel: "noopener noreferrer" },
+            },
+          },
+        ],
+      },
+      {
+        title: t("cards.flowbite-sb.title"),
+        text: t("cards.flowbite-sb.text"),
+        buttons: [
+          {
+            icon: <SiStorybook />,
+            text: t("cards.flowbite-sb.buttons.flowbite-sb.text"),
+            brandText: t("cards.flowbite-sb.buttons.flowbite-sb.brand-text"),
+            link: {
+              next: { href: "https://flowbite-react.com/storybook" },
+              anchor: { target: "_blank", rel: "noopener noreferrer" },
+            },
+          },
+          {
+            icon: <SiReact />,
+            text: t("cards.flowbite-sb.buttons.flowbite.text"),
+            brandText: t("cards.flowbite-sb.buttons.flowbite.brand-text"),
+            link: {
+              next: { href: "https://flowbite-react.com/" },
+              anchor: { target: "_blank", rel: "noopener noreferrer" },
+            },
+          },
+        ],
+      },
+    ],
+    [t]
+  );
+
+  const getCards = useMemo(
+    () =>
+      cards.map((card, index) => <CardCta key={index.toString()} {...card} />),
+    [cards]
+  );
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Project Storybook
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              This portfolio project has configured a built-in Storybook build.
-            </p>
-            <Link href="/storybook-static/index.html" target="_blank">
-              <a className="text-blue-600 underline">Take a look.</a>
-            </Link>
-          </Card>
-          <Card>
-            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              System Design Storybook
-            </h5>
-            <p className="font-normal text-gray-700 dark:text-gray-400">
-              Here are the components documented by the system design trough
-              Storybook
-            </p>
-            <Link href="#" className="text-blue-600 underline">
-              <a
-                href="https://flowbite-react.com/storybook"
-                target="_blank"
-                className="text-blue-600 underline"
-              >
-                Take a look
-              </a>
-            </Link>
-          </Card>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+    <div className="flex flex-col justify-center items-center">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 place-items-center gap-6 my-6 px-3">
+        {getCards}
+      </div>
     </div>
   );
 };

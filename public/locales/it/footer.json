@@ -1,0 +1,18 @@
+{
+   "footer-brand-text": "La scelta giusta",
+   "about": {
+      "title": "A proposito",
+      "flowbite": "Flowbite",
+      "tailwindcss": "Tailwindcss"
+   },
+   "follow-me": {
+      "title": "Seguimi",
+      "github": "Github",
+      "discord": "Discord"
+   },
+   "legal": {
+      "title": "Legale",
+      "policy": "Privacy e Policy",
+      "terms-conditions": "Termini e condizioni d'utilizzo"
+   }
+}
